@@ -1,15 +1,28 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+
 	<groupId>cz.cvut.bigdata</groupId>
-	<artifactId>WordCountMPv1</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>word-count</artifactId>
+	<version>1.0</version>
 	<packaging>jar</packaging>
-	<name>WordCountMPv1</name>
+	<name>BDT-WordCount</name>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<jdk.version>1.6</jdk.version>
+		<hadoop.version>1.1.1</hadoop.version>
 	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.hadoop</groupId>
+			<artifactId>hadoop-core</artifactId>
+			<version>${hadoop.version}</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+
 	<build>
 		<finalName>${project.artifactId}</finalName>
 		<plugins>
@@ -29,20 +42,13 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<mainClass>cz.cvut.bigdata.WordCountMPv1.WordCount</mainClass>
+							<mainClass>cz.cvut.bigdata.wordcount.WordCount</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
-	<dependencies>
-		<dependency>
-			<groupId>org.apache.hadoop</groupId>
-			<artifactId>hadoop-core</artifactId>
-			<scope>provided</scope>
-			<version>1.1.1</version>
-		</dependency>
-	</dependencies>
+
 </project>
 
